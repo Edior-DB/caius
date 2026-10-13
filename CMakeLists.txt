@@ -935,7 +935,7 @@ makeConfSection(NAME "30-compiler" SECTION "default"
     POST_SWITCHES
         "-I${PROJECT_SOURCE_DIR}/runtime/druntime/src"
         "-I${PROJECT_BINARY_DIR}/import"
-        "-I${PROJECT_SOURCE_DIR}/runtime/phobos"
+        "-I${PROJECT_SOURCE_DIR}/runtime/castd"
         "-I${PROJECT_SOURCE_DIR}/runtime/jit-rt/d"
 
     INSTALL
@@ -1097,8 +1097,8 @@ foreach(p core etc ldc)
     install(DIRECTORY runtime/druntime/src/${p} DESTINATION ${INCLUDE_INSTALL_DIR} FILES_MATCHING PATTERN "*.d")
     install(DIRECTORY runtime/druntime/src/${p} DESTINATION ${INCLUDE_INSTALL_DIR} FILES_MATCHING PATTERN "*.di")
 endforeach()
-install(DIRECTORY runtime/phobos/std DESTINATION ${INCLUDE_INSTALL_DIR} FILES_MATCHING PATTERN "*.d")
-install(DIRECTORY runtime/phobos/etc DESTINATION ${INCLUDE_INSTALL_DIR} FILES_MATCHING PATTERN "*.d")
+install(DIRECTORY runtime/castd/std DESTINATION ${INCLUDE_INSTALL_DIR} FILES_MATCHING PATTERN "*.d")
+install(DIRECTORY runtime/castd/etc DESTINATION ${INCLUDE_INSTALL_DIR} FILES_MATCHING PATTERN "*.d")
 install(DIRECTORY runtime/jit-rt/d/ldc DESTINATION ${INCLUDE_INSTALL_DIR} FILES_MATCHING PATTERN "*.d")
 install(FILES ${GCCBUILTINS} DESTINATION ${INCLUDE_INSTALL_DIR}/ldc)
 
